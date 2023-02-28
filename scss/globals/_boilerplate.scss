@@ -1,3 +1,7 @@
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font-family: var(--font-body);
   font-size: var(--font-size);
@@ -7,7 +11,15 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 165px;
+}
+
+.container-main {
+  // layout
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // footer
