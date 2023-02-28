@@ -1,29 +1,18 @@
 @media only screen and (min-width: 62rem) {
-  // left
+  .right {
+    position: absolute;
+    top: 130px;
+    right: -270px;
+  }
   .left {
-    position: relative;
+    position: absolute;
     left: 165px;
-    top: 55px;
-
-    &__subtitle {
-      text-transform: uppercase;
-    }
+    top: 200px;
+    width: 470px;
 
     &__title {
-      font-size: 4rem;
-      font-weight: var(--fw-700);
-      font-family: var(--font-headings);
-      line-height: 1;
-      width: 470px;
-      text-transform: uppercase;
+      font-size: 3.5rem;
     }
-  }
-
-  .right {
-    display: block;
-    position: relative;
-    top: 130px;
-    right: -250px;
   }
 }
 
@@ -31,20 +20,99 @@
   .header {
     margin: 0 1.5rem;
   }
-  .container-main {
-    // layout
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
+
+  .right {
+    position: absolute;
+    top: 70px;
+  }
+  .left {
+    position: absolute;
+    left: 0;
+    top: 500px;
+    margin: 0 1.5rem;
+
+    &__title {
+      font-size: 2.3rem;
+    }
+    &__link {
+      font-size: 0.813rem;
+    }
   }
 
-  .left {
-    margin: 0 1.5rem;
+  .nav-list {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0.3rem;
+    font-weight: var(--fw-700);
+    width: 85%;
+    text-transform: uppercase;
+
+    // off
+    padding: 1rem 1rem 2rem;
+    margin: 0;
+
+    // position
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 100px;
+
+    // layout
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    //
+    opacity: 0;
+    pointer-events: none;
+    visibility: none;
+    transition: all 0.4s;
+    z-index: 99;
   }
-  .right {
+
+  // nav-open
+  .nav-open .nav-list {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .nav-open .icon-hamburger {
+    display: none;
+  }
+  .nav-open .icon-close {
     display: block;
-    position: relative;
-    right: -10px;
+  }
+  // hamburger menu
+  .btn-mobile-nav {
+    display: block;
+    z-index: 100;
+  }
+
+  hr {
+    border: 1px solid var(--neutral-light-grayish-blue);
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  .left {
+    position: absolute;
+    left: 0;
+    top: 550px;
+    margin: 0 1.5rem;
+
+    &__title {
+      font-size: 2.3rem;
+    }
+    &__link {
+      font-size: 0.813rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .left {
+    &__link {
+      font-size: 10px;
+    }
   }
 }
